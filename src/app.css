@@ -1,0 +1,133 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+	font-family: system-ui, sans-serif;
+	background: #0f0f1a;
+	color: #fff;
+	height: 100dvh;
+	overflow: hidden;
+}
+
+#map, #globe {
+	width: 100vw;
+	height: 100dvh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.hidden { display: none; }
+
+.ui-overlay {
+	position: fixed;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.6rem;
+	pointer-events: none;
+}
+
+.title {
+	background: rgba(15, 15, 26, 0.85);
+	backdrop-filter: blur(8px);
+	padding: 0.4rem 1.2rem;
+	border-radius: 999px;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #f72585;
+	border: 1px solid rgba(247, 37, 133, 0.3);
+}
+
+.status {
+	background: rgba(15, 15, 26, 0.8);
+	backdrop-filter: blur(6px);
+	padding: 0.35rem 1rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	color: #aaa;
+	border: 1px solid rgba(255,255,255,0.08);
+	pointer-events: all;
+}
+
+.smash-btn {
+	position: fixed;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	background: #f72585;
+	color: #fff;
+	border: none;
+	border-radius: 999px;
+	padding: 0.9rem 2.5rem;
+	font-size: 1rem;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 0 24px rgba(247, 37, 133, 0.5);
+	transition: transform 0.1s, box-shadow 0.1s;
+	letter-spacing: 0.04em;
+}
+
+.smash-btn:active {
+	transform: translateX(-50%) scale(0.94);
+	box-shadow: 0 0 10px rgba(247, 37, 133, 0.3);
+}
+
+.smash-btn:disabled {
+	background: #555;
+	box-shadow: none;
+	cursor: not-allowed;
+}
+
+.pin-count {
+	position: fixed;
+	bottom: 2rem;
+	right: 1.5rem;
+	z-index: 1000;
+	background: rgba(15, 15, 26, 0.85);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(255,255,255,0.1);
+	border-radius: 10px;
+	padding: 0.5rem 0.9rem;
+	font-size: 0.8rem;
+	color: #ccc;
+	text-align: center;
+	line-height: 1.4;
+}
+
+.pin-count strong {
+	display: block;
+	font-size: 1.3rem;
+	color: #f72585;
+}
+
+.tabs {
+	display: flex;
+	gap: 0.4rem;
+	pointer-events: all;
+}
+
+.tab {
+	padding: 0.3rem 1rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-decoration: none;
+	color: #aaa;
+	background: rgba(255,255,255,0.06);
+	border: 1px solid rgba(255,255,255,0.1);
+	transition: all 0.15s;
+}
+
+.tab:hover { color: #fff; background: rgba(255,255,255,0.12); }
+.tab.active { background: #f72585; color: #fff; border-color: #f72585; }
+.tab button, button.tab { cursor: pointer; font-family: inherit; }
+
+/* Leaflet dark tile override */
+.leaflet-tile { filter: brightness(0.7) saturate(0.6) hue-rotate(180deg); }
+.leaflet-container { background: #0f0f1a; }
