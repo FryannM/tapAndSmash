@@ -48,6 +48,7 @@
 		<div class="tabs">
 			<a href="/" class="tab">🗺️ Map</a>
 			<a href="/stats" class="tab active">📊 Stats</a>
+			<a href="/about" class="tab">ℹ️ About</a>
 		</div>
 	</div>
 
