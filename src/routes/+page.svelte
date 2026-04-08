@@ -145,6 +145,7 @@
 	<div class="tabs">
 		<a href="/" class="tab active">🗺️ Map</a>
 		<a href="/stats" class="tab">📊 Stats</a>
+		<a href="/about" class="tab">ℹ️ About</a>
 		<button class="tab" onclick={() => (view3d = !view3d)}>{view3d ? '🗺️ 2D' : '🌍 3D'}</button>
 	</div>
 	<span class="status">{status}</span>
